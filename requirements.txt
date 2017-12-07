@@ -1,0 +1,6 @@
+certstream
+fuzzywuzzy
+tqdm
+entropy
+python-Levenshtein
+termcolor
