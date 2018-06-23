@@ -4,9 +4,14 @@ Can be used to find malicious use of SSL certs related to your domain.
 
 Adapted from the Phish_Catcher tool found at https://github.com/x0rz/phishing_catcher
 
-# Next steps
-Allow to match against a list of domains
+I have updated to be Docker'ized and includes a simple web interface and MySQL backend.
+This portion is still a bit clunky but it is a start.
 
-# Example Usage (update 'source' accordingly)
+# Next steps
+- Allow environment variables in Compose file.
+
+# Example Usage
 -Add appropriate domains to "domainfile.py"
--python fuzzycertstream.py
+```
+# docker-compose up
+```
