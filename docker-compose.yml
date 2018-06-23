@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+ mysql:
+  image: mariadb
+  environment:
+   - MYSQL_ROOT_PASSWORD=weakpassword123
+  restart: always
+
+ php:
+  image: fuzzycertstream-php:7.0-apache
+  build:
+    context: .
+    dockerfile: ./php/Dockerfile
+  ports:
+   - '80:80'
+
+ fuzzycertstream:
+  image: fuzzycertstream-python
+  build:
+    context: ./python
+
+ phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+   - '8080:80'
+  environment:
+   - PMA_HOST=mysql
+   - PMA_PORT=3306
+   - PMA_USER=root
+   - PMA_PASSWORD=weakpassword123
+   - PMA_ARBITRARY=1
